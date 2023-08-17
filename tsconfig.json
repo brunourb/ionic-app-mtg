@@ -25,6 +25,7 @@
     "useDefineForClassFields": false
   },
   "angularCompilerOptions": {
+    "experimentalDecorators": true,
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
