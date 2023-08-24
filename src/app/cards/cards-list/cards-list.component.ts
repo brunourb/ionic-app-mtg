@@ -1,6 +1,8 @@
+import { Model, Card } from '../../shared/card';
 import { map } from 'rxjs';
 import { CardsService } from './../cards.service';
 import { Component, OnInit } from '@angular/core';
+import { Mode } from '@ionic/core';
 
 @Component({
   selector: 'app-cards-list',
@@ -10,10 +12,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardsListComponent  implements OnInit {
 
-  constructor(private service: CardsService) { 
-    this.service.listar().pipe(
-      map(response=> console.log(response))
-    );
+
+  //model!: Model;
+
+  model: Model = {
+    cards: []
+  };
+
+  constructor(private service: CardsService) {
+    console.log("CardsListComponent inicado.");
+
+    this.service.listar().subscribe(res=>{
+      console.log(res);
+    });
   }
 
   ngOnInit() {}
