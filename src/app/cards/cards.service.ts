@@ -12,17 +12,17 @@ export class CardsService extends AbstractService<Card,number>{
       super();
     }
 
-    listar(): Observable<Model> {
-      return this.http.get<Model>(this.url);
+    listar(): Observable<Card[]> {
+      return this.http.get<Card[]>(this.url);
     }
-    buscar(id: number): Observable<Model> {
-      return this.http.get<Model>(`${this.url}/${id}`);
+    buscar(id: number): Observable<Card> {
+      return this.http.get<Card>(`${this.url}/${id}`);
     }
-    criar(objeto: Model): Observable<Model> {
-      return this.http.post<Model>(this.url, objeto);
+    criar(objeto: Card): Observable<Card> {
+      return this.http.post<Card>(this.url, objeto);
     }
-    atualizar(objeto: Model): Observable<Model> {
-      return this.http.patch<Model>(this.url, objeto);
+    atualizar(objeto: Card): Observable<Card> {
+      return this.http.patch<Card>(this.url, objeto);
     }
     deletar(id: number): void {
       this.http.delete(`${this.url}/${id}`);
