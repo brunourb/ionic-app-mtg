@@ -18,4 +18,8 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class CardsPageRoutingModule {}
+export class CardsPageRoutingModule {
+  constructor(){
+    console.log("CardsPageRoutingModule inicado.");
+  }
+}

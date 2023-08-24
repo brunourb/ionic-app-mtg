@@ -14,4 +14,8 @@ import { PrincipalPageRoutingModule } from './principal-routing.module';
     PrincipalPageRoutingModule
   ]
 })
-export class PrincipalPageModule {}
+export class PrincipalPageModule {
+  constructor(){
+    console.log("PrincipalPageModule iniciado.");
+  }
+}
