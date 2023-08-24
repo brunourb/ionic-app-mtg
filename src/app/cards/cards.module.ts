@@ -1,3 +1,4 @@
+import { CardsService } from './cards.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -11,7 +12,12 @@ import { CardsPageRoutingModule } from './cards-routing.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    CardsPageRoutingModule
+    CardsPageRoutingModule,
   ]
 })
-export class CardsPageModule {}
+export class CardsPageModule {
+  constructor(){
+    console.log("CardsPageModule Inicio.");
+  }
+
+}
