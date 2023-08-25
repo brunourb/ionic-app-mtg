@@ -13,14 +13,15 @@ import { Card } from 'src/app/shared/card';
 export class CardsListPage implements OnInit {
 
 
-  cards! : ModelCard;
+  //cards! : ModelCard;
+  cards! : Card[];
 
   constructor(private service: CardsService) { }
 
   ngOnInit() {
     this.service.listar()
     .subscribe(response => {
-      this.cards = response;
+      this.cards = response.cards;
       console.log(this.cards);  
     });
     
