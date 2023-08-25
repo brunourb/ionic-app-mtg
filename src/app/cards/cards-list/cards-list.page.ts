@@ -1,4 +1,9 @@
+import { ModelCard } from './../../shared/card';
+import { Mode } from '@ionic/core';
+import { CardsService } from './../cards.service';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Card } from 'src/app/shared/card';
 
 @Component({
   selector: 'app-cards-list',
@@ -7,9 +12,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardsListPage implements OnInit {
 
-  constructor() { }
+
+  cards! : ModelCard;
+
+  constructor(private service: CardsService) { }
 
   ngOnInit() {
+    this.service.listar()
+    .subscribe(response => {
+      this.cards = response;
+      console.log(this.cards);  
+    });
+    
   }
-
 }

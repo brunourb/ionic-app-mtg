@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>cards-list</ion-title>
+    <ion-title>Lista de Cards</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -10,4 +10,9 @@
       <ion-title size="large">cards-list</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-list *ngFor="let card of cards.cards">
+    <ion-item>
+      <ion-label>{{card.name}}</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
